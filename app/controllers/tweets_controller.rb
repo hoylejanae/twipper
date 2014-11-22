@@ -1,7 +1,7 @@
 class TweetsController < ApplicationController
 
 	before_action :authenticate_user!
-	
+
 	def new
 		@tweet = Tweet.new
 		@tweets = current_user.tweets
@@ -10,11 +10,15 @@ class TweetsController < ApplicationController
 	def create
 		@tweet = Tweet.new(tweet_params)
 		@tweet.user = current_user
-		@tweet.save
+		if @tweet.save
+			flash[:success] = "You have created a tweet"
 		
 		#@tweet = Tweet.create(tweet_params)
+		else 
+			flash[:danger] = "Please fix the problems below"
+
+		end
 		@tweets = current_user.tweets
-		flash[:success] = "You have created a tweet"
 		render 'new'
 
 	end
