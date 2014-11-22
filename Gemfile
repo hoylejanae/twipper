@@ -40,6 +40,8 @@ gem 'spring',        group: :development
 
 gem 'simple_form'
 
+gem 'devise'
+
 group :development, :test do
      gem 'sqlite3'
 end
