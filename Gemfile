@@ -41,6 +41,8 @@ gem 'simple_form'
 
 gem 'devise'
 
+gem 'carrierwave'
+
 group :development, :test do
      gem 'sqlite3'
 end
