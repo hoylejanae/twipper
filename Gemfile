@@ -43,6 +43,8 @@ gem 'devise'
 
 gem 'carrierwave'
 
+gem 'twitter-text', '~> 1.10.0'
+
 group :development, :test do
      gem 'sqlite3'
 end
